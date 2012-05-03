@@ -78,6 +78,22 @@ p.summary {
   top: 43px;
 }
 
+.title {
+  position: absolute;
+  left: -188px;
+  bottom: 15px;
+  font-size: 2.0em;
+  color: #000300;
+  font-weight: bold;
+  -webkit-transition: 2s ease-in-out;
+  opacity: 0;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.title.show {
+  opacity: 1.0;
+}
+
 ul.contents {
   list-style: none;
   margin: 0 auto 20px;

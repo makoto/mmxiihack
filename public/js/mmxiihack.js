@@ -6,12 +6,17 @@ jQuery(function($){
   var contents = [{key: 'intro', path: '/', label: 'Introduction'},
                   {key: 'info', path: '/info', label: 'Information'},
                   {key: 'faq', path: '/faq', label: 'FAQ'},
-                  {key: 'partners', path: '/partners', label: 'Sponsors & partners'},
+                  {key: 'partners', path: '/partners', label: 'Supporters'},
                   {key: 'credit', path: '/credit', label: 'Credit'}];
 
   var aniEvent = 'animationend webkitAnimationEnd MSAnimationEnd';
 
+  _(contents).each( function(c) {
+    $('.hexagon.' + c.key).tooltip({title: c.label});
+  });
+
   $('.hexagon').click( function() {
+    $(this).tooltip('hide');
     if ($(this).hasClass('select')) {
       unselectContent(true);
     } else {
@@ -23,7 +28,6 @@ jQuery(function($){
     }
   });
 
-
   function unselectContent(hideContents) {
     $('.hexagon').removeClass('select');
     var a = $('ul.contents li.select');
@@ -33,6 +37,7 @@ jQuery(function($){
       setTimeout(function() {
         a.removeClass('select');
       }, 1010);
+      $('.title').removeClass('show');
     } else {
       a.removeClass('select');
     }
@@ -48,6 +53,8 @@ jQuery(function($){
     c.addClass('select');
 
     $('ul.contents').addClass('show');
+    $('.title').html(content.label);
+    $('.title').addClass('show');
   }
 
   function contentByHexagon(hex) {
