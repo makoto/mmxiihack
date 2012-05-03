@@ -29,10 +29,9 @@ p.summary {
 
 .hexagons {
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
+  margin: 15px auto;
   width: 156px;
+  height: 103px;
 }
 
 .hexagon {
@@ -75,10 +74,50 @@ p.summary {
 }
 
 .hexagon.select{
-  left: -150px;
+  left: -245px;
   top: 43px;
 }
 
+ul.contents {
+  list-style: none;
+  margin: 0 auto 20px;
+  width: 640px;
+  padding: 20px;
+  background: #000300;
+  -webkit-border-radius: 6px;
+  opacity: 0;
+  color: white;
+  font-size: 1.5em;
+  -webkit-transition: 1s ease-in-out;
+}
+
+ul.contents.show {
+  opacity: 0.85;
+}
+
+ul.contents li p {
+  font-size: 0.9em;
+  line-height: 1.2em;
+}
+
+ul.contents > li {
+  display: none;
+}
+
+ul.contents li.select {
+  display: block;
+}
+
+ul.contents ul.list {
+  margin-bottom: 9px;
+}
+
+ul.contents ul.list li {
+  font-size: 0.8em;
+  line-height: 1.1em;
+}
+
+/*
 @-webkit-keyframes drop {
  from {
    top: 86px;
@@ -87,7 +126,6 @@ p.summary {
    top: 500px;
  }
 }
-/*
 .hexagon.green{
   -webkit-animation-name: drop;
   -webkit-animation-delay: 2s;
