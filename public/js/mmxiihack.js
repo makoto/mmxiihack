@@ -28,6 +28,10 @@ jQuery(function($){
     }
   });
 
+  setTimeout(function() {
+    selectContent(contents[0]);
+  },1000);
+
   function unselectContent(hideContents) {
     $('.hexagon').removeClass('select');
     var a = $('ul.contents li.select');
