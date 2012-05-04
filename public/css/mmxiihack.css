@@ -136,7 +136,7 @@ ul.contents ul.list li {
 .badges {
   position: fixed;
   right: 10px;
-  bottom: 10px;
+  top: 10px;
   text-align: right;
   padding: 0;
   margin: 0;
