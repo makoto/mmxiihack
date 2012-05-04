@@ -160,6 +160,11 @@ ul.contents ul.list li {
   background-size: 24px 29px;
 }
 
+.badge.github {
+  background-image: url(../img/github.png);
+  background-size: 24px 24px;
+}
+
 /*
 @-webkit-keyframes drop {
  from {
