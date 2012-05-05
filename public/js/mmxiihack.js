@@ -64,6 +64,34 @@ jQuery(function($){
   // Actions
   // =====================================
 
+  function shakeHexagon(hex) {
+    var count = 0;
+    var left = parseInt(hex.css('left'));
+
+    hex.css('-webkit-transition','none');
+    hex.css('transition','none');
+    hex.css('-moz-transition','none');
+    hex.css('-o-transition','none');
+
+    var interval = setInterval( function() {
+      count++;
+      if (count>10) {
+        clearInterval(interval);
+        hex.css('left', left + 'px');
+        setTimeout( function() {
+          hex.removeAttr('style');
+        }, 50);
+        return;
+      }
+
+      if (count%2==0)
+        hex.css('left', (left - 1) + 'px');
+      else
+        hex.css('left', (left + 1) + 'px');
+
+    }, 80);
+  }
+
   function setHistory(content) {
     if (!history.pushState) return false;
 
