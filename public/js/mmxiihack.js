@@ -1,6 +1,9 @@
 jQuery(function($){
 
-  // ============== Initialize
+  // =====================================
+  // Initialization
+  // =====================================
+
   $.supersized({
     slides: [ {image : 'bg/6764486061_c7c9b598a1_o.jpg', title : 'Image Credit: Maria Kazvan'} ]
   });
@@ -17,7 +20,10 @@ jQuery(function($){
     $('.hexagon.' + c.key).tooltip({title: c.label});
   });
 
-  // ============== Event handler
+  // =====================================
+  // Event handlers
+  // =====================================
+
   $('.hexagon').click( function() {
     $(this).tooltip('hide');
 
@@ -34,7 +40,21 @@ jQuery(function($){
     return false;
   });
 
-  // ============== Actions
+  $(window).bind('popstate', function(event) {
+    var content = contentByURL();
+
+    if (content) {
+      unselectContent(false);
+      selectContent(content);
+    } else {
+      unselectContent(true);
+    }
+  });
+
+  // =====================================
+  // Actions
+  // =====================================
+
   function setHistory(content) {
     if (!history.pushState) return false;
 
@@ -77,9 +97,18 @@ jQuery(function($){
     $('.title').addClass('show');
   }
 
+  function contentByURL() {
+    var path = document.location.pathname;
+    var content = _(contents).filter(function(c) { return path=='/' + c.path; });
+    if (content.length==1)
+      return content[0];
+    else
+      return null;
+  }
+
   function contentByHexagon(hex) {
     var content = _(contents).filter(function(c) { return hex.hasClass(c.key); });
-    if (_(content).size()==1)
+    if (content.length==1)
       return content[0];
     else
       return null;
