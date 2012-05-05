@@ -45,6 +45,9 @@ p.summary {
   cursor: pointer;
 
   -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
 }
 
 .hexagon.bluegreen {
@@ -85,9 +88,13 @@ p.summary {
   font-size: 1.8em;
   color: #000300;
   font-weight: bold;
-  -webkit-transition: 2s ease-in-out;
   opacity: 0;
   font-family: 'Bitter', cursive;
+
+  -webkit-transition: 2s ease-in-out;
+  transition: 2s ease-in-out;
+  -moz-transition: 2s ease-in-out;
+  -o-transition: 2s ease-in-out;
 }
 
 .title.show {
@@ -100,11 +107,19 @@ ul.contents {
   width: 640px;
   padding: 20px;
   background: #000300;
-  -webkit-border-radius: 6px;
   opacity: 0;
   color: white;
   font-size: 1.5em;
+
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -o-border-radius: 6px;
+
   -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
 }
 
 ul.contents.show {
