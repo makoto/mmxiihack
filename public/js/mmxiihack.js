@@ -29,6 +29,8 @@ jQuery(function($){
 
     if ($(this).hasClass('select')) {
       unselectContent(true);
+
+      setHistory(null);
     } else {
       var content = contentByHexagon($(this));
       unselectContent(false);
@@ -36,6 +38,13 @@ jQuery(function($){
 
       setHistory(content);
     }
+
+    return false;
+  });
+
+  $('.hexagon_bg').click( function() {
+    unselectContent(true);
+    setHistory(null);
 
     return false;
   });
@@ -58,7 +67,7 @@ jQuery(function($){
   function setHistory(content) {
     if (!history.pushState) return false;
 
-    var url = "";
+    var url = "/";
     var title = "Londinium MMXII Hackathon";
     if (content) {
       url = content.path;

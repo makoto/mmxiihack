@@ -34,7 +34,7 @@ p.summary {
   height: 103px;
 }
 
-.hexagon {
+.hexagon,.hexagon_bg {
   position: absolute;
   background-size: 52px 60px;
   background-repeat: no-repeat;
@@ -50,27 +50,35 @@ p.summary {
   -o-transition: 1s ease-in-out;
 }
 
-.hexagon.bluegreen {
+.hexagon_bg {
+  opacity: 0.2;
+}
+
+.hexagons .bluegreen {
   background-image: url(../img/bluegreen.png);
   left: 76px;
   top: 0px;
 }
-.hexagon.red{
+
+.hexagons .red{
   background-image: url(../img/red.png);
   left: 126px;
   top: 0px;
 }
-.hexagon.blue{
+
+.hexagons .blue{
   background-image: url(../img/blue.png);
   left: 0px;
   top: 43px;
 }
-.hexagon.yellow{
+
+.hexagons .yellow{
   background-image: url(../img/yellow.png);
   left: 51px;
   top: 43px;
 }
-.hexagon.green{
+
+.hexagons .green{
   background-image: url(../img/green.png);
   left: 101px;
   top: 43px;
