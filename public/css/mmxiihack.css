@@ -29,7 +29,7 @@ p.summary {
 
 .hexagons {
   position: relative;
-  margin: 15px auto;
+  margin: 30px auto 15px;
   width: 156px;
   height: 103px;
 }
