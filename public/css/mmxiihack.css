@@ -80,14 +80,14 @@ p.summary {
 
 .title {
   position: absolute;
-  left: -188px;
-  bottom: 15px;
+  left: -185px;
+  bottom: 18px;
   font-size: 2.0em;
   color: #000300;
   font-weight: bold;
   -webkit-transition: 2s ease-in-out;
   opacity: 0;
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Bitter', cursive;
 }
 
 .title.show {
