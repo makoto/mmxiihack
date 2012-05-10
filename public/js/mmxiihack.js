@@ -37,7 +37,7 @@ jQuery(function($){
   // Event handlers
   // =====================================
 
-  $('.hexagon').click( function() {
+  $('.hexagon').bind('click touchstart', function() {
     $(this).tooltip('hide');
 
     if ($(this).hasClass('select')) {
