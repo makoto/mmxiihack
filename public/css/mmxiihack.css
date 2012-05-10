@@ -115,7 +115,6 @@ ul.contents {
   width: 640px;
   padding: 20px;
   background: #000300;
-  opacity: 0;
   color: white;
   font-size: 1.5em;
 
@@ -130,6 +129,10 @@ ul.contents {
   -o-transition: 1s ease-in-out;
 }
 
+.js_on ul.contents{
+  opacity: 0;
+}
+
 ul.contents.show {
   opacity: 0.85;
 }
@@ -139,7 +142,7 @@ ul.contents li p {
   line-height: 1.2em;
 }
 
-ul.contents > li {
+.js_on ul > li {
   display: none;
 }
 
