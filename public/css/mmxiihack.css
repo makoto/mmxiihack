@@ -190,6 +190,11 @@ ul.contents ul.list li {
   background-size: 24px 24px;
 }
 
+.badge2.lanyrd {
+  background-image: url(../img/lanyrd-32x32.png);
+  background-size: 24px 24px;
+}
+
 /*
 @-webkit-keyframes drop {
  from {
