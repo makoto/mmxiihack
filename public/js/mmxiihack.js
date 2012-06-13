@@ -25,12 +25,13 @@ jQuery(function($){
   if (document.location.pathname=="/") {
     setTimeout( function() {
       if (!activated) {
-        $('.hexagon.intro').tooltip('show');
-        setTimeout( function() {
-          $('.hexagon.intro').tooltip('hide');
-        }, 5000);
+        document.location.pathname = '/info';
+        // $('.hexagon.intro').tooltip('show');
+        // setTimeout( function() {
+        //   $('.hexagon.intro').tooltip('hide');
+        // }, 5000);
       }
-    }, 2000);
+    }, 1000);
   }
 
   // =====================================
