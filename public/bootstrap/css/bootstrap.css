@@ -153,7 +153,7 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Karla', sans-serif;;
   font-size: 13px;
   line-height: 18px;
   color: #333333;
@@ -417,8 +417,8 @@ a:hover {
 }
 
 p {
-  margin: 0 0 9px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 0 15px;
+  font-family: 'Karla', sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -468,8 +468,9 @@ h1 small {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 36px;
+  margin-bottom:5px;
 }
 
 h2 small {

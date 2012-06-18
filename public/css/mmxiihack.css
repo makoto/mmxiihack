@@ -7,20 +7,24 @@ body {
   background: grey;
 }
 
-h1 {
-  padding: 20px 0 10px;
+h1,
+.subline {
+  padding: 10px 0 10px;
   text-align: center;
   color: #94090D;
   font-size: 5.0em;
-  line-height: 1.1em;
+  line-height: 1em;
   /*text-shadow: 0px 2px 2px #444;*/
-  font-family: 'Audiowide', cursive;
+  font-family: 'Vollkorn', serif;
 }
 
-h1 .subline {
+p.subline {
   color: black;
-  font-size: 0.5em;
+  font-size: 2em;
   line-height: 0.8em;
+  font-weight:bold;
+  margin:0;
+  padding:50px 0 0 0 ;
 }
 
 p.summary {
@@ -97,7 +101,7 @@ p.summary {
   color: #000300;
   font-weight: bold;
   opacity: 0;
-  font-family: 'Bitter', cursive;
+  font-family:'Vollkorn', serif ;
 
   -webkit-transition: 2s ease-in-out;
   transition: 2s ease-in-out;
@@ -135,8 +139,8 @@ ul.contents.show {
 }
 
 ul.contents li p {
-  font-size: 0.9em;
-  line-height: 1.2em;
+  font-size: 0.8em;
+  line-height: 1.5em;
 }
 
 ul.contents > li {
