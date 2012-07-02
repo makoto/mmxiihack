@@ -20,6 +20,12 @@ jQuery(function($){
     $('.hexagon.' + c.key).tooltip({title: c.label});
   });
 
+  $('.partners img').each(function(){
+    if (this.alt != "") {
+      $(this).tooltip({title: this.alt, placement:'right'})
+    };
+  })
+
   var activated = false;
 
   if (document.location.pathname=="/") {

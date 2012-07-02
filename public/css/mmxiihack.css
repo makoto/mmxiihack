@@ -218,3 +218,11 @@ ul.contents ul.list li {
   -webkit-animation-direction: alternate;
 }
 */
+
+.partners a{
+  margin: 5px;
+}
+
+.tooltip{
+  font-size: 15px;
+}
