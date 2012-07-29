@@ -32,7 +32,6 @@ p.summary {
 }
 
 .hexagons {
-  display: none;
   position: relative;
   margin: 30px auto 15px;
   width: 156px;
@@ -115,6 +114,7 @@ p.summary {
 }
 
 .pandamode {
+  display: none;
   margin: 0 auto 20px;
   width: 800px;
 }

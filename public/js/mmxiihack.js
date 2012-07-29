@@ -48,35 +48,44 @@ jQuery(function($){
   // =====================================
   // Panda mode logic
   // =====================================
-  var pusher = new Pusher("a8d6b011ca9900b8ece8");
-  var channel = pusher.subscribe("london");
-  var last_love = null, last_hate = null;
+  if (pandamode) {
+    $('.pandamode').show();
+    $('.hexagons').hide();
+    var pusher = new Pusher("a8d6b011ca9900b8ece8");
+    var channel = pusher.subscribe("london");
+    var last_love = null, last_hate = null;
 
-  channel.bind('recent', function(data) {
-    console.log(data);
+    channel.bind('recent', function(data) {
+      console.log(data);
 
-    var love, hate;
-    for ( var i=0; i<data.length; i++) {
-      if (data[i]["sentiment"]=="negative")
-        hate = parseInt(data[i]["total"]);
-      else if (data[i]["sentiment"]=="positive")
-        love = parseInt(data[i]["total"]);
-    }
+      var love, hate;
+      for ( var i=0; i<data.length; i++) {
+        if (data[i]["sentiment"]=="negative")
+          hate = parseInt(data[i]["total"]);
+        else if (data[i]["sentiment"]=="positive")
+          love = parseInt(data[i]["total"]);
+      }
 
-    console.log(love);
-    console.log(hate);
+      console.log(love);
+      console.log(hate);
 
-    if (last_love && love) {
-      change_panda_size($('#love_panda'), love - last_love);
-    }
+      if (last_love && love) {
+        change_panda_size($('#love_panda'), love - last_love);
+      }
 
-    if (last_hate && hate) {
-      change_panda_size($('#hate_panda'), hate - last_hate);
-    }
+      if (last_hate && hate) {
+        change_panda_size($('#hate_panda'), hate - last_hate);
+      }
 
-    last_hate = hate;
-    last_love = love;
-  });
+      last_hate = hate;
+      last_love = love;
+    });
+    channel.bind('tweet', function(data) {
+      // console.log(data);
+      // App.data = data;
+      // renderLoveHateGraph(data);
+    });
+  }
 
   function change_panda_size(obj, diff) {
     var size = obj.width();
@@ -87,11 +96,6 @@ jQuery(function($){
     obj.height(size + 'px');
   }
 
-  channel.bind('tweet', function(data) {
-    // console.log(data);
-    // App.data = data;
-    // renderLoveHateGraph(data);
-  });
 
   // =====================================
   // Event handlers
