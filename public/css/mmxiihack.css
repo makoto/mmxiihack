@@ -32,6 +32,7 @@ p.summary {
 }
 
 .hexagons {
+  display: none;
   position: relative;
   margin: 30px auto 15px;
   width: 156px;
@@ -111,6 +112,33 @@ p.summary {
 
 .title.show {
   opacity: 1.0;
+}
+
+.pandamode {
+  margin: 0 auto 20px;
+  width: 800px;
+}
+
+.panda_frame{
+  float: left;
+  width: 400px;
+}
+
+.panda {
+  width: 10px;
+  height: 10px;
+
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+}
+
+.panda.hate {
+  float: left;
+}
+.panda.love {
+  float: right;
 }
 
 ul.contents {

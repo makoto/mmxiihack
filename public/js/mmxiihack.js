@@ -8,6 +8,11 @@ jQuery(function($){
     slides: [ {image : 'bg/6764486061_c7c9b598a1_o.jpg', title : 'Image Credit: Maria Kazvan'} ]
   });
 
+  var pandamode = false;
+  if (document.location.pathname=="/panda") {
+    pandamode = true;
+  }
+
   var contents = [{key: 'intro', path: 'intro', label: 'Introduction'},
                   {key: 'info', path: 'info', label: 'Information'},
                   {key: 'faq', path: 'faq', label: 'FAQ'},
@@ -30,7 +35,7 @@ jQuery(function($){
 
   if (document.location.pathname=="/") {
     setTimeout( function() {
-      if (!activated) {
+      if (!activated && !pandamode) {
         document.location.pathname = '/info';
         // $('.hexagon.intro').tooltip('show');
         // setTimeout( function() {
@@ -39,6 +44,54 @@ jQuery(function($){
       }
     }, 1000);
   }
+
+  // =====================================
+  // Panda mode logic
+  // =====================================
+  var pusher = new Pusher("a8d6b011ca9900b8ece8");
+  var channel = pusher.subscribe("london");
+  var last_love = null, last_hate = null;
+
+  channel.bind('recent', function(data) {
+    console.log(data);
+
+    var love, hate;
+    for ( var i=0; i<data.length; i++) {
+      if (data[i]["sentiment"]=="negative")
+        hate = parseInt(data[i]["total"]);
+      else if (data[i]["sentiment"]=="positive")
+        love = parseInt(data[i]["total"]);
+    }
+
+    console.log(love);
+    console.log(hate);
+
+    if (last_love && love) {
+      change_panda_size($('#love_panda'), love - last_love);
+    }
+
+    if (last_hate && hate) {
+      change_panda_size($('#hate_panda'), hate - last_hate);
+    }
+
+    last_hate = hate;
+    last_love = love;
+  });
+
+  function change_panda_size(obj, diff) {
+    var size = obj.width();
+    size = size + (diff*10);
+    if (size<10) size = 10;
+
+    obj.width(size + 'px');
+    obj.height(size + 'px');
+  }
+
+  channel.bind('tweet', function(data) {
+    // console.log(data);
+    // App.data = data;
+    // renderLoveHateGraph(data);
+  });
 
   // =====================================
   // Event handlers
