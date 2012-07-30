@@ -31,6 +31,10 @@ p.summary {
   text-align: center;
 }
 
+p.news{
+  color:red;
+}
+
 .hexagons {
   position: relative;
   margin: 30px auto 15px;
